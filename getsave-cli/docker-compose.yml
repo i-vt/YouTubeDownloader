@@ -1,0 +1,10 @@
+services:
+  getsave:
+    build: .
+    image: getsave-cli:latest
+    container_name: getsave
+    volumes:
+      - ./downloads:/downloads
+    # Compose is used as a build helper here; run downloads via `docker run`
+    # or `docker compose run --rm getsave <url>`.
+    profiles: ["cli"]

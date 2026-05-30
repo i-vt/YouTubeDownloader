@@ -1,0 +1,9 @@
+services:
+  ytdl:
+    build: .
+    image: ytdl-api
+    volumes:
+      - ./downloads:/downloads   # files land here on the host
+    # Override CMD at run time, e.g.:
+    #   docker compose run --rm ytdl "https://youtu.be/..." --format mp3-320
+    #   docker compose run --rm ytdl formats
